@@ -9,6 +9,7 @@ import (
 
 type ConfigList struct {
 	LogFile string
+	Apikey  string
 }
 
 var Config ConfigList
@@ -22,5 +23,6 @@ func init() {
 
 	Config = ConfigList{
 		LogFile: cfg.Section("gotrading").Key("log_file").String(),
+		Apikey:  cfg.Section("open_weather").Key("api_key").String(),
 	}
 }
